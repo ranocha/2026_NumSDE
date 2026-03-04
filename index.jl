@@ -33,7 +33,8 @@ let
 			  [Repositories](https://github.com/ranocha/$(repo)) beschrieben."""
 	for name in notebooks
 		file = read(name, String)
-		pattern = r"md\"\"\"\n# (\d+\.\d+ [^\n]+)"
+		# pattern = r"md\"\"\"\n# (\d+\.\d+ [^\n]+)"
+		pattern = r"md\"\"\"\n# (\d+ [^\n]+)"
 		m = match(pattern, file)
 		m === nothing && continue
 		title = m.captures[1]
